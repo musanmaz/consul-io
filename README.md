@@ -4,9 +4,30 @@ Consul Uploader is a CLI tool used to upload configuration files from a specifie
 
 ## Installation
 
-You need to have Go installed to run this project. You can download Go from [here](https://golang.org/dl/).
+You can download the latest release from the [Releases](https://github.com/musanmaz/consul-uploader/releases) page.
 
-### Installing Dependencies
+### Using the Binary
+
+Download the binary for your platform from the releases page and add it to your PATH.
+
+#### Example for Linux
+
+```sh
+wget https://github.com/musanmaz/consul-uploader/releases/download/v1.0.0/consul-uploader
+chmod +x consul-uploader
+sudo mv consul-uploader /usr/local/bin/
+```
+
+## Usage
+
+You can run the CLI tool using the following command:
+
+```sh
+consul-uploader --consul-addr=http://localhost:8500 /path/to/config/directory
+```
+
+
+### Installing Dependencies for Local Development
 
 To install the dependencies for the project, run the following commands:
 
@@ -16,7 +37,7 @@ go get github.com/spf13/cobra
 go mod tidy
 ```
 
-## Usage
+## Usage for Local Development
 
 You can run the CLI tool using the following command:
 
