@@ -5,7 +5,7 @@ on:
     branches:
       - main
     tags:
-      - 'main-v*.*.*'
+      - 'v*.*.*'
 
 jobs:
   build:
@@ -18,7 +18,7 @@ jobs:
     - name: Set up Go
       uses: actions/setup-go@v2
       with:
-        go-version: 1.20
+        go-version: '1.20'
 
     - name: Build
       run: go build -o consul-uploader
