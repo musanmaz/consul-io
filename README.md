@@ -13,10 +13,22 @@ Download the binary for your platform from the releases page and add it to your 
 #### Example for Linux
 
 ```sh
-wget https://github.com/musanmaz/consul-uploader/releases/download/v1.0.0/consul-uploader
-chmod +x consul-uploader
-sudo mv consul-uploader /usr/local/bin/
+wget https://github.com/musanmaz/consul-uploader/releases/download/v1.0.1/consul-uploader-linux-amd64
+chmod +x consul-uploader-linux-amd64
+sudo mv consul-uploader-linux-amd64 /usr/local/bin/consul-uploader
 ```
+
+#### Example for macOS
+
+```sh
+wget https://github.com/musanmaz/consul-uploader/releases/download/v1.0.0/consul-uploader-darwin-amd64
+chmod +x consul-uploader-darwin-amd64
+sudo mv consul-uploader-darwin-amd64 /usr/local/bin/consul-uploader
+```
+
+#### Example for macOS
+Download the binary from the releases page and add it to your PATH.
+
 
 ## Usage
 
