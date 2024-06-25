@@ -26,7 +26,7 @@ chmod +x consul-uploader-darwin-amd64
 sudo mv consul-uploader-darwin-amd64 /usr/local/bin/consul-uploader
 ```
 
-#### Example for macOS
+#### Example for Windows
 Download the binary from the releases page and add it to your PATH.
 
 
