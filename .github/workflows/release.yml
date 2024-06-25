@@ -2,8 +2,6 @@ name: Create Release
 
 on:
   push:
-    branches:
-      - main
     tags:
       - 'v*.*.*'
 
@@ -18,7 +16,7 @@ jobs:
     - name: Set up Go
       uses: actions/setup-go@v2
       with:
-        go-version: '1.20'
+        go-version: '1.20'  # Correct Go version
 
     - name: Build
       run: go build -o consul-uploader
@@ -29,8 +27,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${{ github.ref }}
-        release_name: Release ${{ github.ref }}
+        tag_name: ${{ github.ref_name }}  # Use ref_name to get the tag name without refs/tags/
+        release_name: Release ${{ github.ref_name }}
         draft: false
         prerelease: false
         body: |
@@ -43,7 +41,7 @@ jobs:
           #### Example for Linux
 
           ```sh
-          wget https://github.com/${{ github.repository }}/releases/download/${{ github.ref }}/consul-uploader
+          wget https://github.com/${{ github.repository }}/releases/download/${{ github.ref_name }}/consul-uploader
           chmod +x consul-uploader
           sudo mv consul-uploader /usr/local/bin/
           ```
