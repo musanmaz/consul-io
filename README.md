@@ -1,14 +1,14 @@
 # Consul Uploader CLI
 
-Consul Uploader, belirli bir dizindeki konfigürasyon dosyalarını Consul KV store'a yüklemek için kullanılan bir CLI aracıdır.
+Consul Uploader is a CLI tool used to upload configuration files from a specified directory to the Consul KV store.
 
-## Kurulum
+## Installation
 
-Bu projeyi çalıştırmak için Go'nun kurulu olması gerekmektedir. Go'yu [buradan](https://golang.org/dl/) indirebilirsiniz.
+You need to have Go installed to run this project. You can download Go from [here](https://golang.org/dl/).
 
-### Bağımlılıkların Yüklenmesi
+### Installing Dependencies
 
-Projenin bağımlılıklarını yüklemek için aşağıdaki komutları çalıştırın:
+To install the dependencies for the project, run the following commands:
 
 ```sh
 go get github.com/hashicorp/consul/api
@@ -16,30 +16,29 @@ go get github.com/spf13/cobra
 go mod tidy
 ```
 
-## Kullanım
+## Usage
 
-CLI aracını çalıştırmak için aşağıdaki komutu kullanabilirsiniz:
+You can run the CLI tool using the following command:
 
 ```sh
 go run main.go --consul-addr=http://localhost:8500 /path/to/config/directory
 ```
 
-### Komut Satırı Argümanları
+### Command Line Arguments
 
-* `--consul-addr` : Consul sunucusunun adresini belirtir. Varsayılan değer `http://localhost:8500`'dir.
+* `--consul-addr`  : Specifies the address of the Consul server. The default value is `http://localhost:8500`.
 
-* `/path/to/config/directory` : Yüklemek istediğiniz konfigürasyon dosyalarının bulunduğu dizin.
+* `/path/to/config/directory` : The directory containing the configuration files you want to upload.
 
-## Örnek Kullanım
+## Example Usage
 
 ```sh
 go run main.go --consul-addr=http://localhost:8500 test
 ```
 
-Bu komut, `test` dizinindeki `.production` uzantılı dosyaları bulur ve Consul KV store'a yükler.
+This command finds the files with the `.production` extension in the `test` directory and uploads them to the Consul KV store.
 
-
-## Örnek Klasör Yapısı
+## Example Directory Structure
 
 ```go
 consul-uploader/
@@ -60,18 +59,18 @@ consul-uploader/
 └── main.go
 ```
 
-* `cmd/:` CLI komutlarını içeren dosya.
+* `cmd/:` Contains the CLI command files.
 
-* `test/:` Yüklemek istediğiniz konfigürasyon dosyalarının bulunduğu örnek dizin.
+* `test/:` Example directory containing the configuration files you want to upload.
 
-* `go.mod:` Go modül bilgilerini içeren dosya.
+* `go.mod:` Contains Go module information.
 
-* `go.sum:` Go modüllerinin doğrulama bilgilerini içeren dosya.
+* `go.sum:` Contains the verification information for the Go modules.
 
-* `main.go:` Programın giriş noktası.
+* `main.go:` The entry point of the program.
 
 ## Bağımlılıklar
 
-* [github.com/hashicorp/consul/api](https://github.com/hashicorp/consul/api) : Consul API ile iletişim kurmak için kullanılan kütüphane.
+* [github.com/hashicorp/consul/api](https://github.com/hashicorp/consul/api) : Library used to interact with the Consul API.
 
-* [github.com/spf13/cobra](https://github.com/spf13/cobra) : Komut satırı arayüzü oluşturmak için kullanılan kütüphane.
+* [github.com/spf13/cobra](https://github.com/spf13/cobra) : Library used to create the command line interface.
