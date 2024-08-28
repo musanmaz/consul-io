@@ -1,8 +1,6 @@
 package main
 
-import (
-	"consul-uploader/cmd"
-)
+import "github.com/musanmaz/consul-io/cmd"
 
 func main() {
 	cmd.Execute()
