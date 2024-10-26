@@ -53,44 +53,6 @@ consul-io --consul-addr=http://localhost:8500 --token=my-secret-token export tes
 ```
 This command downloads the configuration files from the Consul KV store and saves them in the `test` directory, maintaining the same structure.
 
-### Docker Usage
-
-You can run the Consul IO CLI using Docker.
-
-#### Building and Running the Docker Image
-
-To build and run the Docker image, follow these steps:
-
-1. Build the Docker image:
-
-```bash
-docker build -t consul-io .
-```
-
-
-2. Run the Docker container:
- 
-```bash
-docker run -it --rm \
-    -e CONSUL_ADDR=http://localhost:8500 \
-    -e TOKEN=my-secret-token \
-    consul-io export /path/to/directory
-```
-
-#### Running from Docker Hub
-
-You can pull and run the Docker image directly from Docker Hub:
-
-```bash
-docker pull <dockerhub_username>/consul-io:<version>
-
-docker run -it --rm \
-  -e CONSUL_ADDR=http://localhost:8500 \
-  -e TOKEN=my-secret-token \
-  musanmaz/consul-io:<version> export /path/to/directory
-```
-
-
 ### Colorful Console Output
 
 Consul IO provides colorful console output to improve readability:
