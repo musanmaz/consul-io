@@ -102,4 +102,3 @@ consul-io/
 
 - [github.com/fatih/color](https://github.com/fatih/color)  : Library used for adding color to the terminal output.
 
-Cursor Test
